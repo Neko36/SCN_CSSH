@@ -1,4 +1,4 @@
-SCN HTML5 Session Management Demo
+SCN HTML5 Session Management
 ========
 
 HTML5 Session Management Demo for SAP Community Network. 
