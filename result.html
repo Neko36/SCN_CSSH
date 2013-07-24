@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Session Management Demo</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
+		<link href="css/bootstrap-responsive.min.css" rel="stylesheet" />
+		<link href="css/main.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="brand" href="input.html">Session Management Demo</a>
+					<div class="nav-collapse collapse">
+						<ul class="nav">
+							<li>
+								<a href="input.html">Input</a>
+							</li>
+							<li class="active">
+								<a href="#">Result</a>
+							</li>
+							<li>
+								<a href="http://scn.sap.com/people/michaelherzog">Back to SCN</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<form class="form-horizontal">
+				<h2 class="form-signin-heading">Data from Session Storage</h2>
+				<div class="control-group">
+					<label class="control-label" for="input_firstname">First name:</label>
+					<div class="controls">
+						<input type="text" id="input_firstname" placeholder="First name">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="input_lastname">Last name:</label>
+					<div class="controls">
+						<input type="text" id="input_lastname" placeholder="Last name">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="input_age">Age:</label>
+					<div class="controls">
+						<input type="number" id="input_age" placeholder="Age">
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="controls">
+						<a href="javascript:void(0);" id="clear" class="btn">
+							Clear Session Storage
+						</a>
+						<p style="margin-top: 10px">
+							<!-- Button to trigger modal -->
+							<a href="#myModal" data-toggle="modal"><i class="icon-question-sign"></i> What happens here</a>
+						</p>
+					</div>
+				</div>
+				<div class="alert alert-block" style="display:none">
+				  <button type="button" class="close" data-dismiss="alert">&times;</button>
+				  <h4>Warning!</h4>
+				 	No data found in Session Storage...
+				</div>
+			</form>
+			<!-- Modal -->
+			<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						×
+					</button>
+					<h3 id="myModalLabel">Explanation</h3>
+				</div>
+				<div class="modal-body">
+					<p>
+						When you call this site, all relevant data in Session Storage will be read and displayed in the form. If there are no data in Session Storage, a warning pops up.
+						If you click the button <em>Clear Session Storage</em>, all persons data in Session Storage will be deleted and the current site will be reloaded.
+					</p>
+				</div>
+				<div class="modal-footer">
+					<button class="btn" data-dismiss="modal" aria-hidden="true">
+						Close
+					</button>
+				</div>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="container">
+				<p>
+					Built by <a href="http://scn.sap.com/people/michaelherzog" target="_blank">Michael Herzog</a> for <a href="http://scn.sap.com/welcome" target="_blank">SAP Community Network</a>.
+				</p>
+			</div>
+		</footer>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/sessionmanager.js"></script>
+		<script type="text/javascript" src="js/person.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				
+				MYSAP.readPerson();
+				
+				$("#clear").click(function(){
+					MYSAP.clearPerson();
+				});
+			
+			});
+		</script>
+	</body>
+</html>

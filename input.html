@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Session Management Demo</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<link href="css/bootstrap.min.css" rel="stylesheet" />
+		<link href="css/bootstrap-responsive.min.css" rel="stylesheet" />
+		<link href="css/main.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="brand" href="#">Session Management Demo</a>
+					<div class="nav-collapse collapse">
+						<ul class="nav">
+							<li class="active">
+								<a href="#">Input</a>
+							</li>
+							<li>
+								<a href="result.html">Result</a>
+							</li>
+							<li>
+								<a href="http://scn.sap.com/people/michaelherzog">Back to SCN</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<form class="form-horizontal" action="result.html">
+				<h2 class="form-signin-heading">Please enter data</h2>
+				<div class="control-group">
+					<label class="control-label" for="input_firstname">First name:</label>
+					<div class="controls">
+						<input type="text" id="input_firstname" placeholder="First name">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="input_lastname">Last name:</label>
+					<div class="controls">
+						<input type="text" id="input_lastname" placeholder="Last name" >
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="input_age">Age:</label>
+					<div class="controls">
+						<input type="number" id="input_age" placeholder="Age">
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="controls">
+						<button id="submit" type="submit" class="btn btn-primary">
+							Submit
+						</button>
+						<p style="margin-top: 10px">
+							<!-- Button to trigger modal -->
+							<a href="#myModal" data-toggle="modal"><i class="icon-question-sign"></i> What happens here</a>
+						</p>
+					</div>
+				</div>
+			</form>
+			<!-- Modal -->
+			<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						×
+					</button>
+					<h3 id="myModalLabel">Explanation</h3>
+				</div>
+				<div class="modal-body">
+					<p>
+						When you submit the form, all data will be stored in the browsers Session Storage. When you close your browser or tab, all data will be lost.
+						As long as the browser or tab is opened, all depentet data in Session Storage will be avaiable for your application. 						
+					</p>
+					<p>
+						<span class="label label-info">Heads up!</span> The current site has no databinding to Session Storage.
+					</p>
+				</div>
+				<div class="modal-footer">
+					<button class="btn" data-dismiss="modal" aria-hidden="true">
+						Close
+					</button>
+				</div>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="container">
+				<p>
+					Built by <a href="http://scn.sap.com/people/michaelherzog" target="_blank">Michael Herzog</a> for <a href="http://scn.sap.com/welcome" target="_blank">SAP Community Network</a>.
+				</p>
+			</div>
+		</footer>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/sessionmanager.js"></script>
+		<script type="text/javascript" src="js/person.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+				$(".form-horizontal").submit(function() {
+					MYSAP.submitPerson();
+				});
+			});
+		</script>
+	</body>
+</html>
