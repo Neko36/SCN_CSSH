@@ -18,4 +18,3 @@
 	};			
 
 }(window.MYSAP = window.MYSAP || {}, jQuery));
-
