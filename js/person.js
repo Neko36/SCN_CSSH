@@ -16,6 +16,4 @@
 	
 		console.log(this.firstName + ' ' + this.lastName + ', ' + this.age + ' years');
 	};			
-
 }(window.MYSAP = window.MYSAP || {}, jQuery));
-

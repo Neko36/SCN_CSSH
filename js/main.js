@@ -30,9 +30,10 @@
 			person.log();
 		
 			// Write data to DOM
-			$('#input_firstname').val(person.firstName);
-			$('#input_lastname').val(person.lastName);
-			$('#input_age').val(person.age);	
+			$('#input_firstname').html(person.firstName);
+			$('#input_lastname').html(person.lastName);
+			$('#input_age').html(person.age);	
+			
 		}else{
 			// Show warning
 			$('.alert-block').show();

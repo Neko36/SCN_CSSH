@@ -34,4 +34,3 @@
 		sessionStorage.removeItem('person');
 	}
 }(window.MYSAP = window.MYSAP || {}, jQuery));
-
